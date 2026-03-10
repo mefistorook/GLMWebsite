@@ -59,13 +59,6 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Link
-              to="/tenant-support"
-              className="mobile-nav-link"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Tenant Support
-            </Link>
           </nav>
         )}
       </div>
