@@ -13,7 +13,7 @@ const Home = () => {
           <div className="hero-content">
             <h1 className="hero-large">Modern Property Operations. Built for Performance.</h1>
             <p className="body-large" style={{ marginTop: '32px', maxWidth: '800px' }}>
-              At Goldline, we provide operational oversight, tenant coordination, and revenue optimisation 
+              At <span style={{ color: 'var(--gold-accent)', fontWeight: '700' }}>Goldline</span>, we provide operational oversight, tenant coordination, and revenue optimisation 
               across a growing portfolio of professionally operated residential assets, supported by structured 
               systems and modern technology.
             </p>
