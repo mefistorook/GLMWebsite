@@ -149,7 +149,7 @@ const Home = () => {
               <p className="body-large">
                 "The level of detail and systemisation is unlike traditional management."
               </p>
-              <p className="body-small testimonial-author">— RF Mohammed</p>
+              <p className="body-small testimonial-author">— Arif Mohammed</p>
             </div>
           </div>
 

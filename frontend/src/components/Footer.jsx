@@ -31,9 +31,9 @@ const Footer = () => {
               Contact
             </h4>
             <div className="footer-contact">
-              <a href="tel:+353874539911" className="footer-contact-item">
+              <a href="tel:+35318527207" className="footer-contact-item">
                 <Phone size={16} />
-                <span>+353 87 453 9911</span>
+                <span>+353 (1) 852 7207</span>
               </a>
               <a href="mailto:goldlinemanagement@outlook.com" className="footer-contact-item">
                 <Mail size={16} />

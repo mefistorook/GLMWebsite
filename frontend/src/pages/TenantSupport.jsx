@@ -6,6 +6,7 @@ const TenantSupport = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     address: '',
     message: ''
   });
@@ -14,7 +15,7 @@ const TenantSupport = () => {
     e.preventDefault();
     // Mock submission
     toast.success('Your request has been submitted. We will be in touch shortly.');
-    setFormData({ name: '', email: '', address: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', address: '', message: '' });
   };
 
   const handleChange = (e) => {
@@ -51,7 +52,7 @@ const TenantSupport = () => {
             <div className="support-form-wrapper">
               <form onSubmit={handleSubmit} className="support-form">
                 <div className="form-group">
-                  <label htmlFor="name" className="body-regular">Name</label>
+                  <label htmlFor="name" className="body-regular">Name *</label>
                   <input
                     type="text"
                     id="name"
@@ -64,7 +65,7 @@ const TenantSupport = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email" className="body-regular">Email</label>
+                  <label htmlFor="email" className="body-regular">Email *</label>
                   <input
                     type="email"
                     id="email"
@@ -77,7 +78,21 @@ const TenantSupport = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="address" className="body-regular">Property Address</label>
+                  <label htmlFor="phone" className="body-regular">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="form-input"
+                    placeholder="+353 XX XXX XXXX"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="address" className="body-regular">Property Address *</label>
                   <input
                     type="text"
                     id="address"
@@ -91,8 +106,8 @@ const TenantSupport = () => {
 
                 <div className="form-group">
                   <label htmlFor="message" className="body-regular">
-                    {activeForm === 'maintenance' && 'Maintenance Details'}
-                    {activeForm === 'enquiry' && 'Your Enquiry'}
+                    {activeForm === 'maintenance' && 'Maintenance Details *'}
+                    {activeForm === 'enquiry' && 'Your Enquiry *'}
                   </label>
                   <textarea
                     id="message"

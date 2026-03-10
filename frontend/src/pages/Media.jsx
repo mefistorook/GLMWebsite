@@ -3,24 +3,24 @@ import React from 'react';
 const Media = () => {
   const properties = [
     {
-      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/5gth3wd1_Luxurious%20living%20hall.jpeg',
-      caption: 'Luxurious Living Hall'
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/f6iqiypu_208e29b5-9b96-4a76-bf6a-9682d86cef21.JPG',
+      caption: 'Bedroom'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/rsb8zgz8_Neat%20classy%20bathrooms.jpeg',
-      caption: 'Neat Classy Bathrooms'
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/5gth3wd1_Luxurious%20living%20hall.jpeg',
+      caption: 'Hall'
     },
     {
       image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/zwy655k0_IMG_2146.jpg',
-      caption: 'Premium Kitchen Design'
+      caption: 'Kitchen Design'
     },
     {
       image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/aewl4g0e_6e8086aa-b1e0-41d7-b0b2-6d46d87a93e0.JPG',
-      caption: 'Modern Kitchen & Living Area'
+      caption: 'Modern Kitchen'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/f6iqiypu_208e29b5-9b96-4a76-bf6a-9682d86cef21.JPG',
-      caption: 'Elegant Bedroom Suite'
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/gbfyu3u1_IMG_2154.jpg',
+      caption: 'Neat Classy Bathroom'
     }
   ];
 

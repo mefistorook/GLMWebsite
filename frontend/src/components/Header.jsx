@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -37,10 +37,6 @@ const Header = () => {
           </nav>
 
           <div className="navigation-utilities">
-            <a href="tel:+353874539911" className="contact-phone">
-              <Phone size={16} />
-              +353 87 453 9911
-            </a>
             <button 
               className="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -63,13 +59,13 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a
-              href="tel:+353874539911"
+            <Link
+              to="/tenant-support"
               className="mobile-nav-link"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact: +353 87 453 9911
-            </a>
+              Tenant Support
+            </Link>
           </nav>
         )}
       </div>
