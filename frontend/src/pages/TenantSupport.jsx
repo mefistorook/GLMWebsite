@@ -29,12 +29,8 @@ const TenantSupport = () => {
       <section className="section-padding">
         <div className="container">
           <h1 className="hero-medium" style={{ marginBottom: '48px' }}>
-            Tenant Support & Advisory
+            Tenant Support
           </h1>
-
-          <p className="body-large" style={{ marginBottom: '48px', maxWidth: '700px' }}>
-            We maintain structured communication channels for supported properties.
-          </p>
 
           <div className="support-content">
             <div className="support-tabs">
@@ -49,12 +45,6 @@ const TenantSupport = () => {
                 onClick={() => setActiveForm('enquiry')}
               >
                 General Enquiries
-              </button>
-              <button
-                className={`support-tab ${activeForm === 'advisory' ? 'active' : ''}`}
-                onClick={() => setActiveForm('advisory')}
-              >
-                Advisory Opinion
               </button>
             </div>
 
@@ -103,7 +93,6 @@ const TenantSupport = () => {
                   <label htmlFor="message" className="body-regular">
                     {activeForm === 'maintenance' && 'Maintenance Details'}
                     {activeForm === 'enquiry' && 'Your Enquiry'}
-                    {activeForm === 'advisory' && 'Advisory Request'}
                   </label>
                   <textarea
                     id="message"

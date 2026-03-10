@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -9,16 +9,18 @@ const Header = () => {
   const navigation = [
     { name: 'Home', path: '/' },
     { name: 'Our Approach', path: '/approach' },
-    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Media', path: '/media' },
     { name: 'About', path: '/about' }
   ];
+
+  const logoUrl = 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/kcyldvtx_WhatsApp%20Image%202026-03-10%20at%208.23.52%20AM%20%281%29.jpeg';
 
   return (
     <header className="navigation-header">
       <div className="container">
         <div className="header-content">
           <Link to="/" className="navigation-logo">
-            Goldline Management
+            <img src={logoUrl} alt="Goldline Management" className="logo-image" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,9 +37,10 @@ const Header = () => {
           </nav>
 
           <div className="navigation-utilities">
-            <Link to="/tenant-support" className="tenant-support-link">
-              Tenant Support
-            </Link>
+            <a href="tel:+353874539911" className="contact-phone">
+              <Phone size={16} />
+              +353 87 453 9911
+            </a>
             <button 
               className="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -60,13 +63,13 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Link
-              to="/tenant-support"
+            <a
+              href="tel:+353874539911"
               className="mobile-nav-link"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Tenant Support
-            </Link>
+              Contact: +353 87 453 9911
+            </a>
           </nav>
         )}
       </div>

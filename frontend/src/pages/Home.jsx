@@ -23,7 +23,7 @@ const Home = () => {
               <button className="btn-primary" onClick={() => navigate('/approach')}>
                 Explore Our Approach
               </button>
-              <button className="btn-secondary" onClick={() => navigate('/tenant-support')}>
+              <button className="btn-secondary" onClick={() => navigate('/consultation')}>
                 Request Consultation
                 <ArrowRight size={14} />
               </button>
@@ -142,14 +142,14 @@ const Home = () => {
                 "Goldline transformed the operational structure of our property. Communication improved, 
                 performance improved, and stress reduced entirely."
               </p>
-              <p className="body-small testimonial-author">— Private Landlord</p>
+              <p className="body-small testimonial-author">— David Connolly</p>
             </div>
             <div className="testimonial-card">
               <div className="rating">★★★★★</div>
               <p className="body-large">
                 "The level of detail and systemisation is unlike traditional management."
               </p>
-              <p className="body-small testimonial-author">— Portfolio Owner</p>
+              <p className="body-small testimonial-author">— RF Mohammed</p>
             </div>
           </div>
 
@@ -158,9 +158,9 @@ const Home = () => {
             <div className="testimonial-card">
               <div className="rating">★★★★★</div>
               <p className="body-large">
-                "Clear communication and organised processes. Everything feels structured and professionally handled."
+                "Maintenance and response is prompt and we always trust Goldline with our housing in such a difficult market."
               </p>
-              <p className="body-small testimonial-author">— Residential Tenant</p>
+              <p className="body-small testimonial-author">— Nian Dravidan</p>
             </div>
           </div>
         </div>
@@ -178,7 +178,7 @@ const Home = () => {
             <button 
               className="btn-primary" 
               style={{ marginTop: '40px' }}
-              onClick={() => navigate('/tenant-support')}
+              onClick={() => navigate('/consultation')}
             >
               Request Consultation
             </button>
