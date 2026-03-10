@@ -11,13 +11,11 @@ const Home = () => {
       <section className="hero-section section-padding">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-large">Goldline Management Limited</h1>
-            <p className="hero-subtitle">
-              Structured Property Operations. Engineered for Performance.
-            </p>
-            <p className="body-large" style={{ marginTop: '32px', maxWidth: '700px' }}>
-              Operational oversight, tenant coordination, and revenue optimisation across a growing 
-              portfolio of professionally managed residential assets.
+            <h1 className="hero-large">Modern Property Operations. Built for Performance.</h1>
+            <p className="body-large" style={{ marginTop: '32px', maxWidth: '800px' }}>
+              At Goldline, we provide operational oversight, tenant coordination, and revenue optimisation 
+              across a growing portfolio of professionally operated residential assets, supported by structured 
+              systems and modern technology.
             </p>
             <div className="hero-actions">
               <button className="btn-primary" onClick={() => navigate('/approach')}>
