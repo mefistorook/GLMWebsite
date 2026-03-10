@@ -15,8 +15,12 @@ const Media = () => {
       caption: 'Premium Kitchen Design'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/jd493v4h_6e8086aa-b1e0-41d7-b0b2-6d46d87a93e0.JPG',
-      caption: 'Modern Living Space'
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/aewl4g0e_6e8086aa-b1e0-41d7-b0b2-6d46d87a93e0.JPG',
+      caption: 'Modern Kitchen & Living Area'
+    },
+    {
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/f6iqiypu_208e29b5-9b96-4a76-bf6a-9682d86cef21.JPG',
+      caption: 'Elegant Bedroom Suite'
     }
   ];
 
