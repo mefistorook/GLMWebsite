@@ -4,23 +4,23 @@ const Media = () => {
   const properties = [
     {
       image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/f6iqiypu_208e29b5-9b96-4a76-bf6a-9682d86cef21.JPG',
-      caption: 'Bedroom'
+      caption: 'Elegant Bedrooms'
     },
     {
       image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/5gth3wd1_Luxurious%20living%20hall.jpeg',
-      caption: 'Hall'
+      caption: 'Luxurious living spaces'
     },
     {
       image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/zwy655k0_IMG_2146.jpg',
-      caption: 'Kitchen Design'
+      caption: 'High-Design Kitchens'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/aewl4g0e_6e8086aa-b1e0-41d7-b0b2-6d46d87a93e0.JPG',
-      caption: 'Modern Kitchen'
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/palijsiw_Workspace.JPG',
+      caption: 'Bright workspaces'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/gbfyu3u1_IMG_2154.jpg',
-      caption: 'Neat Classy Bathroom'
+      image: 'https://customer-assets.emergentagent.com/job_asset-performance-1/artifacts/3ifgcsna_Bathroom.JPG',
+      caption: 'Stylish Bathrooms'
     }
   ];
 
@@ -32,10 +32,10 @@ const Media = () => {
         <div className="container">
           <div className="media-header">
             <img src={logoUrl} alt="Goldline Management" className="media-logo" />
-            <h1 className="hero-medium" style={{ marginTop: '32px', marginBottom: '48px' }}>
+            <h1 className="hero-medium" style={{ marginTop: '32px', marginBottom: '24px' }}>
               Property Portfolio
             </h1>
-            <p className="body-large" style={{ marginBottom: '80px', maxWidth: '700px' }}>
+            <p className="body-large" style={{ marginBottom: '80px', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
               A curated showcase of professionally managed properties, each structured for operational 
               excellence and tenant satisfaction.
             </p>
