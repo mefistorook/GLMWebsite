@@ -9,6 +9,9 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List
 import uuid
 from datetime import datetime, timezone
+from pydantic import EmailStr
+from email_service import send_email
+
 
 
 ROOT_DIR = Path(__file__).parent
@@ -33,6 +36,21 @@ class StatusCheck(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class ConsultationRequest(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    message: str
+
+class TenantSupportRequest(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    address: str
+    message: str
+    type: str
+
 
 class StatusCheckCreate(BaseModel):
     client_name: str
@@ -65,6 +83,79 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+@api_router.post("/consultation")
+async def submit_consultation(request: ConsultationRequest):
+    try:
+        await db.consultations.insert_one({
+            **request.model_dump(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "status": "new"
+        })
+        
+        subject = f"New Consultation Request from {request.name}"
+        body = f"""
+New Consultation Request:
+
+Name: {request.name}
+Email: {request.email}
+Phone: {request.phone}
+
+Message:
+{request.message}
+
+---
+Submitted: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
+        """
+        
+        await send_email(
+            to_email="goldlinemanagement@outlook.com",
+            subject=subject,
+            body=body
+        )
+        
+        return {"success": True, "message": "Consultation request submitted"}
+    except Exception as e:
+        logger.error(f"Consultation error: {e}")
+        return {"success": False, "message": str(e)}
+
+@api_router.post("/tenant-support")
+async def submit_tenant_support(request: TenantSupportRequest):
+    try:
+        await db.tenant_support.insert_one({
+            **request.model_dump(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "status": "new"
+        })
+        
+        request_type = "Maintenance" if request.type == "maintenance" else "General Enquiry"
+        subject = f"New {request_type} from {request.name}"
+        body = f"""
+New Tenant Support Request - {request_type}:
+
+Name: {request.name}
+Email: {request.email}
+Phone: {request.phone}
+Property Address: {request.address}
+
+Message:
+{request.message}
+
+---
+Submitted: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
+        """
+        
+        await send_email(
+            to_email="goldlinemanagement@outlook.com",
+            subject=subject,
+            body=body
+        )
+        
+        return {"success": True, "message": "Support request submitted"}
+    except Exception as e:
+        logger.error(f"Tenant support error: {e}")
+        return {"success": False, "message": str(e)}
+
 
 # Include the router in the main app
 app.include_router(api_router)

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Consultation = () => {
   const [formData, setFormData] = useState({
@@ -8,17 +11,25 @@ const Consultation = () => {
     phone: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     
-    // Here we'll integrate with backend to send email to goldlinemanagement@outlook.com
     try {
-      // Mock submission for now - will integrate with backend
-      toast.success('Your consultation request has been submitted. We will be in touch shortly.');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      const response = await axios.post(`${BACKEND_URL}/api/consultation`, formData);
+      if (response.data.success) {
+        toast.success('Your consultation request has been submitted. We will be in touch shortly.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
     } catch (error) {
-      toast.error('Something went wrong. Please try again.');
+      console.error('Submission error:', error);
+      toast.error('Failed to submit. Please try again or email us directly.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -99,8 +110,8 @@ const Consultation = () => {
                 />
               </div>
 
-              <button type="submit" className="btn-primary">
-                Submit Consultation Request
+              <button type="submit" className="btn-primary" disabled={submitting}>
+                {submitting ? 'Submitting...' : 'Submit Consultation Request'}
               </button>
             </form>
           </div>
