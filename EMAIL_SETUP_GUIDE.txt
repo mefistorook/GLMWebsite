@@ -1,0 +1,62 @@
+"""
+Alternative Email Solutions for Goldline Management
+
+CURRENT SETUP (Emergent Backend):
+Backend is on Emergent, Frontend on Vercel
+Forms POST to: https://asset-performance-1.preview.emergentagent.com/api/
+
+OPTION 1: Outlook SMTP (RECOMMENDED - Already configured)
+---------------------------------------------------------
+1. Generate App Password:
+   - Go to: https://account.microsoft.com/security
+   - Sign in with goldlinemanagement@outlook.com
+   - Click "Advanced security options"
+   - Under "App passwords", create new app password
+   - Copy password (remove spaces)
+   
+2. Add to backend/.env:
+   SMTP_PASSWORD="your-app-password-here"
+   
+3. Restart backend:
+   sudo supervisorctl restart backend
+
+4. Test form - emails will send to goldlinemanagement@outlook.com
+
+
+OPTION 2: FormSubmit.co (INSTANT - No Backend Needed)
+------------------------------------------------------
+If Option 1 doesn't work, use FormSubmit:
+
+In frontend forms, change form action to:
+<form action="https://formsubmit.co/goldlinemanagement@outlook.com" method="POST">
+
+Add hidden fields:
+<input type="hidden" name="_subject" value="New Consultation Request">
+<input type="hidden" name="_next" value="https://goldlinemanagement.com/thank-you">
+<input type="hidden" name="_captcha" value="false">
+
+Pros: Works instantly, no setup
+Cons: Page redirects after submit
+
+
+OPTION 3: SendGrid/Resend (Professional)
+-----------------------------------------
+1. Sign up for SendGrid (free 100 emails/day)
+2. Get API key
+3. Add to backend/.env:
+   SENDGRID_API_KEY="your-key"
+4. Update email_service.py to use SendGrid
+
+
+CURRENT STATUS:
+---------------
+✅ Backend endpoints ready (/api/consultation, /api/tenant-support)
+✅ Forms save to database
+✅ Forms updated to call backend
+✅ SMTP configured - just needs Outlook app password
+⏳ Waiting for SMTP_PASSWORD to enable email sending
+
+RECOMMENDED ACTION:
+Generate Outlook app password NOW and add to backend/.env
+Then restart backend and test!
+"""
