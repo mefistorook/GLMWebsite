@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
 const Consultation = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +16,7 @@ const Consultation = () => {
     setSubmitting(true);
     
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/consultation`, formData);
+      const response = await axios.post('/api/consultation', formData);
       if (response.data.success) {
         toast.success('Your consultation request has been submitted. We will be in touch shortly.');
         setFormData({ name: '', email: '', phone: '', message: '' });
@@ -27,7 +25,7 @@ const Consultation = () => {
       }
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error('Failed to submit. Please try again or email us directly.');
+      toast.error('Failed to submit. Please try again or call us at +353 (1) 852 7207');
     } finally {
       setSubmitting(false);
     }

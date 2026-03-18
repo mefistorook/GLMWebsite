@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
 const TenantSupport = () => {
   const [activeForm, setActiveForm] = useState('maintenance');
   const [formData, setFormData] = useState({
@@ -20,7 +18,7 @@ const TenantSupport = () => {
     setSubmitting(true);
     
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/tenant-support`, {
+      const response = await axios.post('/api/tenant-support', {
         ...formData,
         type: activeForm
       });
@@ -33,7 +31,7 @@ const TenantSupport = () => {
       }
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error('Failed to submit. Please try again or call us directly.');
+      toast.error('Failed to submit. Please call us at +353 (1) 852 7207');
     } finally {
       setSubmitting(false);
     }
