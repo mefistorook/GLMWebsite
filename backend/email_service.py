@@ -6,11 +6,11 @@ from email.mime.multipart import MIMEMultipart
 async def send_email(to_email: str, subject: str, body: str, from_name: str = "Goldline Website"):
     """Send email using SMTP"""
     
-    # Gmail SMTP settings (you'll need to set up app password)
+    # Outlook SMTP settings
     smtp_server = "smtp-mail.outlook.com"
     smtp_port = 587
-    sender_email = os.getenv("SMTP_EMAIL", "goldlinemanagement@outlook.com")
-    sender_password = os.getenv("SMTP_PASSWORD", "")  # User needs to set this
+    sender_email = os.getenv("SMTP_EMAIL", "info@goldlinemanagement.com")
+    sender_password = os.getenv("SMTP_PASSWORD", "")
     
     message = MIMEMultipart("alternative")
     message["Subject"] = subject

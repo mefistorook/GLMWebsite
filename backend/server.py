@@ -109,7 +109,7 @@ Submitted: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
         """
         
         await send_email(
-            to_email="goldlinemanagement@outlook.com",
+            to_email="info@goldlinemanagement.com",
             subject=subject,
             body=body
         )
@@ -146,7 +146,7 @@ Submitted: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
         """
         
         await send_email(
-            to_email="goldlinemanagement@outlook.com",
+            to_email="info@goldlinemanagement.com",
             subject=subject,
             body=body
         )

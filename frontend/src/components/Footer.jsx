@@ -35,9 +35,9 @@ const Footer = () => {
                 <Phone size={16} />
                 <span>+353 (1) 852 7207</span>
               </a>
-              <a href="mailto:goldlinemanagement@outlook.com" className="footer-contact-item">
+              <a href="mailto:info@goldlinemanagement.com" className="footer-contact-item">
                 <Mail size={16} />
-                <span>goldlinemanagement@outlook.com</span>
+                <span>info@goldlinemanagement.com</span>
               </a>
             </div>
           </div>
