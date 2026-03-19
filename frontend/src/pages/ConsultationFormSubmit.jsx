@@ -29,7 +29,7 @@ const ConsultationFormSubmit = () => {
 
           <div className="consultation-form-wrapper">
             <form 
-              action="https://formsubmit.co/goldlinemanagement@outlook.com" 
+              action="https://formsubmit.co/info@goldlinemanagement.com" 
               method="POST"
               className="consultation-form"
             >

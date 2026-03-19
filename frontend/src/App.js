@@ -7,8 +7,8 @@ import Home from "@/pages/Home";
 import Approach from "@/pages/Approach";
 import Media from "@/pages/Media";
 import About from "@/pages/About";
-import Consultation from "@/pages/Consultation";
-import TenantSupport from "@/pages/TenantSupport";
+import ConsultationFormSubmit from "@/pages/ConsultationFormSubmit";
+import TenantSupportFormSubmit from "@/pages/TenantSupportFormSubmit";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
             <Route path="/approach" element={<Approach />} />
             <Route path="/media" element={<Media />} />
             <Route path="/about" element={<About />} />
-            <Route path="/consultation" element={<Consultation />} />
-            <Route path="/tenant-support" element={<TenantSupport />} />
+            <Route path="/consultation" element={<ConsultationFormSubmit />} />
+            <Route path="/tenant-support" element={<TenantSupportFormSubmit />} />
           </Routes>
         </main>
         <Footer />
